@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TestApp';
+
+  spielerListe = [{name: "Erling Haaland", position: "Stürmer"}, {name:"Robert Lewandowski", position: "Stürmer"}]
 }

@@ -1,0 +1,44 @@
+<div class="form-group">
+  <label for="name">Spielername</label>
+  <input
+    required
+    minlength="3"
+    [(ngModel)]="spieler.playerName"
+    ngModel
+    name="name"
+    #name="ngModel"
+    type="text"
+    id="name"
+    class="form-control"
+  />
+  <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+    Ihre Eingabe war ungültig.
+  </div>
+
+  <select
+    required
+    [(ngModel)]="spieler.position"
+    ngModel
+    name="positionOption"
+    #positionListe="ngModel"
+    id="positionOption"
+  >
+    <option [(ngModel)]="spieler.position" *ngFor="let p of positionList">
+      {{ p }}
+    </option>
+  </select>
+
+  <button class="btn btn-primary" (click)="addPlayer()">+Add</button>
+  <select
+    required
+    ngModel
+    name="spielerList"
+    #position="ngModel"
+    id="position"
+    class="form-control"
+  >
+    <option *ngFor="let s of spielerListe" value="s">
+      {{ s.playerName }}, {{ s.position }}
+    </option>
+  </select>
+</div>
